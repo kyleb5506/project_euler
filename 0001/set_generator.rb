@@ -5,19 +5,19 @@ class SetV < Set
     super()
   end
   def create_set_multiples(start, finish, factor)
-    range = start..finish
+    range = (start)..(finish-1)
     range.step(factor){|x| self.add(x)}
-    return self.dup
+    return nil
   end
   def sum(); return self.to_a.inject(0, :+); end
 end
 
-def generate_set_of_multiples(start, finish, factors)
+def sum_of_multiples(start, finish, factors)
   final_set = SetV.new()
   factors.each do |var|
     tmp_set = SetV.new()
     tmp_set.create_set_multiples(start, finish, var)
     final_set = final_set|tmp_set
   end
-  return final_set.dup
+  return final_set.sum
 end
