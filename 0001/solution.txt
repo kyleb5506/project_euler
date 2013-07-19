@@ -1,0 +1,21 @@
+Project Euler
+
+1. If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+
+S3 = {x|x is in the set of integers, 0<=x<=100, x mod 3 = 0}
+S5 = {x|x is in the set of integers, 0<=x<=100, x mod 5 = 0}
+S3 union S5 = {x|x is in the set of integers, 0<=x<=100, x mod 3 = 0 or x mod 5 = 0}
+S3 intersect S5 = {x|x is in the set of integers, 0<=x<=100, x mode 3 = 0 and x mod 5 = 0}
+A = S3 union S5
+B = S3 intersect S5
+V = A - B
+s = sum of elements in V
+
+Generalized Solution
+
+S = {x|x is a natural number, n<=x<=m, n<=m, n and m are natural numbers, x mod y = 0, y is a natural number}
+I = {x|x is a natural number, x>=0, index set}
+A = union of all sets Si
+B = intersection of all sets Si
+V = A - B
+s = sum of elements in V
