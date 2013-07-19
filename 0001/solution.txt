@@ -11,11 +11,3 @@ B = S3 intersect S5
 V = A - B
 s = sum of elements in V
 
-Generalized Solution
-
-S = {x|x is a natural number, n<=x<=m, n<=m, n and m are natural numbers, x mod y = 0, y is a natural number}
-I = {x|x is a natural number, x>=0, index set}
-A = union of all sets Si
-B = intersection of all sets Si
-V = A - B
-s = sum of elements in V
