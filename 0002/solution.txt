@@ -1,0 +1,27 @@
+fibonacci:
+  f(0) = 1
+  f(1) = 1
+  f(2) = f(0) + f(1) = 2
+  f(3) = f(1) + f(2) = 3
+  f(n) = f(n-2) + f(n-1)
+
+sum:
+  even + even = even
+  even + odd = odd
+  odd + odd = even
+
+f(0): odd,   1
+f(1): odd,   1
+f(2): even,  2
+f(3): odd,   3
+f(4): odd,   5
+f(5): even,  8
+f(6): odd,  13
+f(7): odd,  21
+f(8): even, 34
+
+Pattern Repeats:
+  f(n): n = 3x + 2
+  x = (n - 2) / 3
+  So if (n - 2) % 3 == 0 or (n - 2) / 3 == x
+    n is even
