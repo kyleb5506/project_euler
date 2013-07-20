@@ -1,3 +1,3 @@
 require_relative 'prime_factor'
 
-puts prime_factorization(851475143)
+puts prime_factorization(600851475143)
