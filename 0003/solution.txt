@@ -1,0 +1,29 @@
+Fundamental Theorm of Arithmetic
+x(0)^a(0) * x(1)^a(1) * ... * x(n)^a(n)
+where
+  X is the set of primes
+  xi is in X
+  ai is in the set of natural numbers
+All numbers can be written as a product of prime numbers.
+
+F is the set of factors for n.
+F is a subset of the natural numbers.
+There exist x,y that are in F such that x*y = n.
+A set of two factors of n multipled together equal n.
+When x = y :=> x^2 = n :=> x = sqrt(n) (only when n is a square).
+
+A prime number is a number such that the only factors of the number
+are one and itself.
+
+Since the set of factors of a number mirror across the square root
+of the number only the numbers from 2 to the square root of the number
+must be checked in order to determine if a number is prime or
+composite.
+
+A prime sieve can be constructed using this idea to check the relevant
+set of potential factors and determine primality. The sieve can then
+hold the prime until the next prime is needed.
+
+The prime factorization of a number can be determined by iterating
+across the primes until the quotient of the number and the primes
+of the factorization is equal to one.
