@@ -30,4 +30,6 @@ The range on the possible palindromes is 100^2 to 999^2.
 Once the next palindrome is found it will have to be checked against the range of numbers in
 question which is all three digit numbers. The range can be reduced by observing that
 998^2 cannot be divisible by 999. So only the numbers from 100 to sqrt(n) need to be checked
-as a factor of the palindrome.
+as a factor of the palindrome. If a three digit number has a pair that is also a three
+digit number while iterating over the range the current palindrome is the largest such
+number.
