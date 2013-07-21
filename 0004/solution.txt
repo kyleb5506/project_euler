@@ -1,0 +1,33 @@
+A palindrome is a number that reads the same way backwards and forwards.
+In order for a number to be a palindrome the first half of the number
+must be a mirror image of the second half.
+[abcd] [dbca] = abcddbca
+[abc] d [cba] = abcdcba
+
+Using this information a construction for a palindrome can be performed
+instead of iterating through the entire range. This way only palindromes
+will be check for divisibilty with the three digit numbers.
+
+p = [abcddbca] or [abcdbca]
+f = (|p| % 2 == 0) ? p[0..(|p|/2-1)] : p[0..(|p|/2-1)]
+s = (|p| % 2 == 0) ? p[(|p|/2)..(|p|-1)] : p[(|p|/2)..(|p|-1)]
+The next palindrome is (|p| % 2 == 0) ? [f-1] + [f-1].reverse : [f-1] + [f-1].reverse.shift
+
+The construction takes in the number and splits it in half. The first half of the number
+is decremented then reversed. The reversed half is concatenated with the first half in
+order to get the next prime in the sequence. The palindrome could be found in the opposite
+direction by simply changing the decrement to an increment.
+
+This will encounter problems when the decrement or increment change will change the number
+of digits in the number. In this case the number will have to switch to the other way
+to split the number.
+
+The largest three digit number is 999.
+The smallest three digit number is 100.
+
+The range on the possible palindromes is 100^2 to 999^2.
+
+Once the next palindrome is found it will have to be checked against the range of numbers in
+question which is all three digit numbers. The range can be reduced by observing that
+998^2 cannot be divisible by 999. So only the numbers from 100 to sqrt(n) need to be checked
+as a factor of the palindrome.
