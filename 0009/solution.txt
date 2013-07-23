@@ -1,0 +1,25 @@
+There are two equations with three unknowns. A solver must iterate over one of the three unknowns and solve for the other two.
+
+Constraints:
+	a,b,c are in the set of natural numbers
+	a < b < c, a,b,c > 0
+	a^2 + b^2 = c^2
+	a + b + c = 1000
+
+a = 1000-b-c
+
+(1000-b-c)^2 + b^2 = c^2
+1000000-2000b-2000c+2bc+b^2+c^2+b^2=c^2
+1000000-2000b-2000c+2bc+2b^2=0
+2c(b-1000)=-2b^2+2000b-1000000
+c(b-1000)=-b^2+1000b-500000
+c = (-b^2+1000b-500000)/(b-1000)
+c = -b-(500000)/(b-1000)
+
+Further constraints:
+	b != 1000
+	500000 % (b-1000) == 0
+
+c = -b-(500000)/(b-1000)
+a = 1000-b-c
+a = 1000-2b-(500000)/(b-1000)
