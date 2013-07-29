@@ -1,3 +1,4 @@
+require_relative 'adder'
 
 class Big_Number
   @num_array = []
@@ -25,22 +26,18 @@ class Big_Number
   end
   def add(y)
     a = []; b = []; c = []
-    co = 0; i = 0; d = 0
-    if y.digits > self.digits
-      a = y.num_array.reverse; b = self.num_array.reverse
+    co = 0; i = 0
+    diff = y.digits - self.digits
+    if diff == 0
+      a = y.num_array.reverse; b = @num_array.reverse
+    elsif diff < 0
+      a = (::Array[0]*diff.abs + y.num_array).reverse; b = (@num_array).reverse
     else
-      a = self.num_array.reverse; b = y.num_array.reverse
+      a = (y.num_array).reverse; b = (::Array[0]*diff.abs + @num_array).reverse
     end
     a.each_index{|x|
-      i = a[x] + ((x < b.size) ? b[x] : 0) + co
-      d = i.to_s.scan(/./).map{|y| y.to_i}
-      if d.size == 2
-        co = d[0]
-        c.push(d[1])
-      else
-        co = 0
-        c.push(d[0])
-      end
+      i = Logic.adder(a[x], b[x], co)
+      c.push(i[1]); co=i[0]
     }
     if co != 0; c.push(co); end
     co = 0

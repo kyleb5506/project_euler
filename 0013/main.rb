@@ -1,4 +1,5 @@
 require_relative 'big_number'
+require 'matrix'
 
 bg1 = Big_Number.new("0")
 bg2 = Big_Number.new("0")
