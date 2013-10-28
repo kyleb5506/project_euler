@@ -1,0 +1,23 @@
+A is a triangle of numbers such that the number of
+elements per row is equal to the row number.
+row 1: 1 element
+row 2: 2 elements
+row n: n elements
+
+B is a construction from A tracking the maximum path
+between the adjacent elements at every level.
+
+Each element of B can be defined by the following relationship:
+
+B[i, j] = max(B[i-1, j-1], B[i-1, j]) + A[i, j]
+
+Each element of B is the maximum total that can be attained
+from previous adjacent elements of A.
+
+The solution is not brute force because not all paths are
+calculated. Only the paths that could potentially be the
+largest are kept.
+
+The complexity of this approach is linear because all
+elements of A must be traversed in order to arrive at the
+solution in every case.
