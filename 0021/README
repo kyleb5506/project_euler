@@ -1,0 +1,10 @@
+d(n) = sum of proper factors of n
+An amicable pair of numbers are defined as:
+  d(a) = b and d(b) = a, where a ~= b
+
+The Factorization class from problem 12 can be
+used here to find the factors of a given number.
+
+The factorization of each number can then be
+summed and that number can be factorized and
+summed to test for an amicable pair.
